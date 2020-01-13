@@ -9,16 +9,17 @@ import { PessoaModel } from './pessoa.model';
 })
 export class PessoasComponent implements OnInit {
 
-  pessoa: PessoaModel = new PessoaModel();
-  pessoas: Array<any> = new Array();
+  pessoa: PessoaModel = new PessoaModel(); //19 - Instanciando uma pessoa de pessoa.model.ts
+  pessoas: Array<any> = new Array(); //1 - Recebe retorno da chamada da api
 
-  constructor(private pessoasService: PessoasService) { }
-
+  constructor(private pessoasService: PessoasService) { } /*4 - Servico pessoas sendo importado 
+                                                                no construtor. Tambem será importado
+                                                                no app.module e colocado como um provider */
   ngOnInit() {
-    this.listarPessoas();
+    this.listarPessoas();//2 - Chamado na inicializacao da tela
   }
 
-  cadastrar() {
+  cadastrar() { //21 - Funcao de cadastro de pessoas
     console.log(this.pessoa);
     this.pessoasService.cadastrarPessoa(this.pessoa).subscribe(pessoa => {
       this.pessoa = new PessoaModel();
@@ -28,7 +29,7 @@ export class PessoasComponent implements OnInit {
     })
   }
 
-  listarPessoas() {
+  listarPessoas() { //13 - Retorna pessoas
     this.pessoasService.listarPessoas().subscribe(
       pessoas => {
         this.pessoas = pessoas;

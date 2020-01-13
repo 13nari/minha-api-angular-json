@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PessoasComponent } from './pessoas/pessoas.component';
 
-import {PessoasService} from './pessoas.service';
-import {HttpClientModule} from '@angular/common/http'
-import {FormsModule} from '@angular/forms'
+import {PessoasService} from './pessoas.service'; //5 - Importando o servico pessoas
+import {HttpClientModule} from '@angular/common/http' //10 - Gerencia os modulos http de forma global
+import {FormsModule} from '@angular/forms' //22 - Importando FormsModule
 
 @NgModule({
   declarations: [
@@ -18,9 +18,10 @@ import {FormsModule} from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule //11 - Importar
   ],
-  providers: [PessoasService, HttpClientModule],
+  providers: [PessoasService, HttpClientModule], //6 - Colocando PessoasService como provider
+                                                //12 - Colocando HttpClientModule como provider
   bootstrap: [AppComponent]
 })
 export class AppModule { }

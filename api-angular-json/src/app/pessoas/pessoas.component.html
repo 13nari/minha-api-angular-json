@@ -1,9 +1,10 @@
-<h2>Cadastrar pessoa:</h2>
+<h2>Cadastrar pessoa:</h2> <!--16 - Fazendo o formulario de cadastro-->
 <hr>
 <form>
-    <p>Nome: <input type="text" name="nome" [(ngModel)]="pessoa.nome"></p>
+    <!--17 - ngModel atrela input a uma variavel-->
+    <p>Nome: <input type="text" name="nome" [(ngModel)]="pessoa.nome"></p> <!--18 - Como em pessoa.model.ts -->
     <p>Idade: <input type="text" name="idade" [(ngModel)]="pessoa.idade"></p>
-    <button type="button" (click)="cadastrar()">Cadastrar</button>
+    <button type="button" (click)="cadastrar()">Cadastrar</button> <!--20 - Botão de cadastro-->
 </form>
 
 <h2>Pessoas encontradas:</h2>
@@ -13,8 +14,8 @@
         <th>Nome</th>
         <th>Idade</th>
     </tr>
-    <tr *ngFor = "let pessoa of pessoas">
-        <td>{{pessoa.id}}</td>
+    <tr *ngFor = "let pessoa of pessoas"> <!--14 - Percorre e mostra a lista de pessoas-->
+        <td>{{pessoa.id}}</td>             <!--15 - Fazendo o bind-->
         <td>{{pessoa.nome}}</td>
         <td>{{pessoa.idade}}</td>
     </tr>
