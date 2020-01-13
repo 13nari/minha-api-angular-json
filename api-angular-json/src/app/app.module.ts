@@ -7,6 +7,7 @@ import { PessoasComponent } from './pessoas/pessoas.component';
 
 import {PessoasService} from './pessoas.service';
 import {HttpClientModule} from '@angular/common/http'
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [PessoasService, HttpClientModule],
