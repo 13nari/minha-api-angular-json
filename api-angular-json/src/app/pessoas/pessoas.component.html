@@ -13,10 +13,13 @@
         <th>#id</th>
         <th>Nome</th>
         <th>Idade</th>
+        <th>Ações</th>
     </tr>
     <tr *ngFor = "let pessoa of pessoas"> <!--14 - Percorre e mostra a lista de pessoas-->
         <td>{{pessoa.id}}</td>             <!--15 - Fazendo o bind-->
         <td>{{pessoa.nome}}</td>
         <td>{{pessoa.idade}}</td>
+        <td><button (click)="atualizar(pessoa.id)">Atualizar</button></td>
+        <td><button (click)="remover(pessoa.id)">Remover</button></td>
     </tr>
 </table>

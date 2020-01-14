@@ -17,7 +17,7 @@ import {FormsModule} from '@angular/forms' //22 - Importando FormsModule
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, //23 - Importar
     HttpClientModule //11 - Importar
   ],
   providers: [PessoasService, HttpClientModule], //6 - Colocando PessoasService como provider

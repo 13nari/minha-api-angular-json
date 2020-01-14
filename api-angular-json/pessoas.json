@@ -1,29 +1,9 @@
 {
   "alunos": [
     {
-      "id": 1,
       "nome": "Rodrigo",
-      "idade": 27
-    },
-    {
-      "id": 35,
-      "nome": "Maria",
-      "idade": 21
-    },
-    {
-      "id": 43,
-      "nome": "José",
-      "idade": 19
-    },
-    {
-      "nome": "Teste",
-      "idade": "1000",
-      "id": 44
-    },
-    {
-      "nome": "Natalia",
-      "idade": "99",
-      "id": 45
+      "idade": "27",
+      "id": 1
     }
   ]
 }

@@ -22,8 +22,8 @@ export class PessoasComponent implements OnInit {
   cadastrar() { //21 - Funcao de cadastro de pessoas
     console.log(this.pessoa);
     this.pessoasService.cadastrarPessoa(this.pessoa).subscribe(pessoa => {
-      this.pessoa = new PessoaModel();
-      this.listarPessoas(); //atualiza o grid assim que cadastrar
+      this.pessoa = new PessoaModel(); //25 - Limpa os campos para o proximo cadastro
+      this.listarPessoas(); //26 - Atualiza o grid assim que cadastrar
     }, err => {
       console.log('Erro ao cadastrar pessoa', err)
     })
@@ -39,4 +39,23 @@ export class PessoasComponent implements OnInit {
       }
     )
   }
+
+  atualizar(id: number) {  //27
+    this.pessoasService.atualizarPessoa(id, this.pessoa).subscribe(pessoa => {
+      this.pessoa = new PessoaModel(); //25 - Limpa os campos para o proximo cadastro
+      this.listarPessoas(); //26 - Atualiza o grid assim que cadastrar
+    }, err => {
+      console.log('Erro ao atualizar a pessoa', err)
+    })
+  }
+
+  remover(id: number) {
+    this.pessoasService.removerPessoa(id).subscribe(pessoa => {
+      this.pessoa = new PessoaModel(); //25 - Limpa os campos para o proximo cadastro
+      this.listarPessoas(); //26 - Atualiza o grid assim que cadastrar
+    }, err => {
+      console.log('Erro ao remover a pessoa', err)
+    })
+  }
+
 }
