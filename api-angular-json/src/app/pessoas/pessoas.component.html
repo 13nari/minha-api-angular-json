@@ -1,10 +1,13 @@
-<h2>Cadastrar pessoa:</h2> <!--16 - Fazendo o formulario de cadastro-->
+<h2>Cadastrar pessoa:</h2>
+<!--16 - Fazendo o formulario de cadastro-->
 <hr>
 <form>
     <!--17 - ngModel atrela input a uma variavel-->
-    <p>Nome: <input type="text" name="nome" [(ngModel)]="pessoa.nome"></p> <!--18 - Como em pessoa.model.ts -->
+    <p>Nome: <input type="text" name="nome" [(ngModel)]="pessoa.nome"></p>
+    <!--18 - Como em pessoa.model.ts -->
     <p>Idade: <input type="text" name="idade" [(ngModel)]="pessoa.idade"></p>
-    <button type="button" (click)="cadastrar()">Cadastrar</button> <!--20 - Botão de cadastro-->
+    <button type="button" (click)="cadastrar()">Cadastrar</button>
+    <!--20 - Botão de cadastro-->
 </form>
 
 <h2>Pessoas encontradas:</h2>
@@ -15,11 +18,13 @@
         <th>Idade</th>
         <th>Ações</th>
     </tr>
-    <tr *ngFor = "let pessoa of pessoas"> <!--14 - Percorre e mostra a lista de pessoas-->
-        <td>{{pessoa.id}}</td>             <!--15 - Fazendo o bind-->
+    <tr *ngFor="let pessoa of pessoas">
+        <!--14 - Percorre e mostra a lista de pessoas-->
+        <td>{{pessoa.id}}</td>
+        <!--15 - Fazendo o bind-->
         <td>{{pessoa.nome}}</td>
         <td>{{pessoa.idade}}</td>
-        <td><button (click)="atualizar(pessoa.id)">Atualizar</button></td>
-        <td><button (click)="remover(pessoa.id)">Remover</button></td>
+        <td><button (click)="atualizar(pessoa.id)">Atualizar</button>
+            <button (click)="remover(pessoa.id)">Remover</button></td>
     </tr>
 </table>
